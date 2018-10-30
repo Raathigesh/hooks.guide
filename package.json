@@ -25,6 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "docs": "node ./generate-docs-list.js",
     "ci": "node ./generate-docs-list.js && yarn build"
   },
   "eslintConfig": {
