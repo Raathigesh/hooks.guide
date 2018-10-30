@@ -10,7 +10,8 @@ const Container = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 700px;
+  padding-left: 64px;
+  padding-right: 64px;
 `;
 
 const Heading = styled.div`
@@ -25,39 +26,56 @@ const Warning = styled.div`
   background-color: #fff0c5;
   padding: 10px;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 30px;
 `;
 
 const Highlight = styled.span`
-  background-color: #ffc107;
-  border-radius: 4px;
-  padding-right: 4px;
-  padding-left: 4px;
+  color: #2196f3;
 `;
 
-const Instructions = styled.div``;
+const Instructions = styled.div`
+  margin-top: 30px;
+`;
+const Instruction = styled.div`
+  padding-left: 5px;
+  margin-top: 5px;
+  margin-bottom; 5px;
+  border-left: 3px solid #ffc107;
+`;
+
+const Logo = styled.div`
+  font-size: 35px;
+  margin-bottom: 5px;
+  display: none;
+  @media (max-width: 700px) {
+    display: block;
+  }
+`;
 
 export default function Landing() {
   return (
     <Container>
       <Content>
-        <Heading>Hooks.wiki</Heading>
+        <Logo>
+          <Highlight>Hooks</Highlight>
+          .guide
+        </Logo>
         <SubTitle>
           A catalog of <Highlight>react hooks with live preview.</Highlight>
         </SubTitle>
         <Instructions>
-          You can add a hook here
-          <ul>
-            <li>
-              Copy the template from
-              https://github.com/Raathigesh/hooks.wiki/public/docs/template.md
-              to a folder
-            </li>
-            <li>
-              Rename the teamplate.md to your hook's name and document your hook
-            </li>
-            <li>Send a PR</li>
-          </ul>
+          To showcase a hook
+          <Instruction>
+            📝 Document your hook in{" "}
+            <a href="https://github.com/Raathigesh/hooks.guide/tree/master/public/docs">
+              docs folder
+            </a>{" "}
+            using{" "}
+            <a href="https://github.com/Raathigesh/hooks.guide/blob/master/public/docs/template.md">
+              template.md
+            </a>
+          </Instruction>
+          <Instruction>✅ Send a PR</Instruction>
         </Instructions>
         <Warning>
           Hooks are a new feature proposal that lets you use state and other

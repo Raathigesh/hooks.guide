@@ -5,6 +5,7 @@ import Navigation from "./navigation";
 import Preview from "./preview";
 import hooks from "./docs.json";
 import Landing from "./landing";
+import Loading from "./loading";
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -37,7 +38,7 @@ class App extends Component {
           <GlobalStyle />
           <Navigation />
           <Route path="/" exact render={() => <Landing />} />
-          <Suspense fallback={<div>Loading</div>}>
+          <Suspense fallback={<Loading />}>
             {Object.entries(hooks).map(([key, value]) => {
               return value.map(item => {
                 return (

@@ -14,6 +14,22 @@ const Container = styled.div`
   }
 `;
 
+const Logo = styled.div`
+  font-size: 25px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
+
+const Highlight = styled.span`
+  color: #2196f3;
+`;
+
 const SectionHeader = styled.div`
   padding-bottom: 0;
   padding-left: 0;
@@ -30,15 +46,28 @@ const SectionHeader = styled.div`
 `;
 
 const Item = styled.div`
+  cursor: pointer;
+
   a {
     color: black;
+
     text-decoration: none;
+    &:hover {
+      font-weight: 700;
+      color: #03a9f4;
+    }
   }
 `;
 
 export default function() {
   return (
     <Container>
+      <Logo>
+        <Link to="/">
+          <Highlight>Hooks</Highlight>
+          .guide
+        </Link>
+      </Logo>
       {Object.entries(hooks).map(([key, value]) => {
         return (
           <div>

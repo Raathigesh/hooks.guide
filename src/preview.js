@@ -23,12 +23,14 @@ const cache = createCache();
 const docsResource = createResource(fetchDoc);
 
 const Name = styled.div`
-  font-size: 25px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 400;
 `;
 
 const Reference = styled.a`
   font-size: 15px;
+  text-decoration: none;
+  color: #03a9f4;
 `;
 
 const SubTitle = styled.div`
@@ -61,7 +63,7 @@ export default function Preview(props) {
   });
 
   return (
-    <Flex column pr={4} pl={4} pt={1} auto>
+    <Flex column pr={4} pl={4} pt={0} auto>
       <Name>{nameValue}</Name>
       <Reference href={reference}>{reference}</Reference>
       {hookValue && (
