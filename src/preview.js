@@ -39,6 +39,18 @@ const SubTitle = styled.div`
   margin-bottom: 10px;
 `;
 
+const Console = styled.div`
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  div {
+    display: flex;
+    padding: 5px;
+    background-color: #e6e6e6;
+    color: #002240;
+  }
+`;
+
 export default function Preview(props) {
   const doc = docsResource.read(cache, props.item.path);
   const { name, reference, hook = null, usage } = parse(doc);
@@ -77,6 +89,7 @@ export default function Preview(props) {
       <SubTitle>Live preview</SubTitle>
 
       <div id="preview-root" />
+      <Console id="preview-console" />
     </Flex>
   );
 }

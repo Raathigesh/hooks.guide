@@ -37,6 +37,12 @@ export function execute(code, scope) {
     const useReducer = scope.useReducer;
     const useRef = scope.useRef;
     const useLayoutEffect = scope.useLayoutEffect;
+    console.log = (...args) => {
+      const consoleDiv = document.getElementById("preview-console");
+      const newLog = document.createElement("div");
+      newLog.innerHTML = JSON.stringify(args);
+      consoleDiv.appendChild(newLog);
+    };
     try {
       const tranformedCode = Babel.transform(appened, {
         presets: ["es2015", "react"]
