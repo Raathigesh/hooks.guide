@@ -38,6 +38,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "lodash.throttle": "^4.1.1",
     "node-dir": "^0.1.17"
   }
 }

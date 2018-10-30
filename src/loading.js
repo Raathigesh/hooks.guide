@@ -66,7 +66,7 @@ export default function Loading() {
   return (
     <React.Fragment>
       <SpinnerStyle />
-      <div class="lds-ellipsis">
+      <div className="lds-ellipsis">
         <div />
         <div />
         <div />
