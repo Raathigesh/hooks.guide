@@ -10,6 +10,7 @@ import React, {
 import { Flex } from "reflexbox";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
+import throttle from "lodash.throttle";
 import { createCache, createResource } from "react-cache";
 
 import { execute } from "./executor";
@@ -70,7 +71,8 @@ export default function Preview(props) {
       useEffect,
       useReducer,
       useRef,
-      useLayoutEffect
+      useLayoutEffect,
+      throttle
     });
   });
 
