@@ -1,4 +1,5 @@
 # Hooks.guide
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 Collection of small hooks curated as a single collection.
@@ -41,6 +42,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- prettier-ignore -->
 | [<img src="https://avatars0.githubusercontent.com/u/3108160?v=4" width="100px;"/><br /><sub><b>Raathigeshan Kugarajan</b></sub>](https://twitter.com/Raathigesh)<br />[💻](https://github.com/Raathigesh/hooks.guide/commits?author=Raathigesh "Code") [🎨](#design-Raathigesh "Design") [💡](#example-Raathigesh "Examples") [📖](https://github.com/Raathigesh/hooks.guide/commits?author=Raathigesh "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/4931048?v=4" width="100px;"/><br /><sub><b>Vivek Nayyar</b></sub>](https://www.viveknayyar.in/)<br />[💻](https://github.com/Raathigesh/hooks.guide/commits?author=vivek12345 "Code") [💡](#example-vivek12345 "Examples") [📖](https://github.com/Raathigesh/hooks.guide/commits?author=vivek12345 "Documentation") |
 | :---: | :---: |
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

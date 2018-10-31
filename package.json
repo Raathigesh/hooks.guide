@@ -29,7 +29,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "docs": "node ./generate-docs-list.js",
-    "ci": "node ./generate-docs-list.js && yarn build"
+    "ci": "node ./generate-docs-list.js && yarn build",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,6 +43,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "all-contributors-cli": "^5.4.1",
     "lodash.throttle": "^4.1.1",
     "node-dir": "^0.1.17"
   }
