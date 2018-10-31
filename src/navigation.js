@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import hooks from "./docs.js";
+import LogoComp from "./logo";
 
 import "typeface-nunito";
 
@@ -9,8 +10,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 64px;
+  border-right: 1px solid wheat;
+  padding-right: 13px;
   @media (max-width: 700px) {
     order: 2;
+    padding-left: 10px;
+    border-right: none;
   }
 `;
 
@@ -64,8 +69,7 @@ export default function() {
     <Container>
       <Logo>
         <Link to="/">
-          <Highlight>Hooks</Highlight>
-          .guide
+          <LogoComp size={25} />
         </Link>
       </Logo>
       {Object.entries(hooks)

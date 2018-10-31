@@ -17,9 +17,11 @@ body {
 #preview-root {
   background-color: #002240;
   padding: 7px;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 5px;
   color: white;
   max-width: 900px;
+  box-shadow: 0px 0px 5px rgba(195, 22, 22, 0.03),
+    0px 13px 47px rgba(0, 0, 0, 0.14);
 }
 `;
 

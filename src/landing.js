@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LogoComp from "./logo";
 
 const Container = styled.div`
   display: flex;
@@ -11,7 +12,9 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 64px;
-  padding-right: 64px;
+  @media (max-width: 700px) {
+    padding-left: 10px;
+  }
 `;
 
 const SubTitle = styled.div`
@@ -36,7 +39,6 @@ const Instruction = styled.div`
   padding-left: 5px;
   margin-top: 5px;
   margin-bottom; 5px;
-  border-left: 3px solid #ffc107;
 `;
 
 const Logo = styled.div`
@@ -52,16 +54,17 @@ export default function Landing() {
   return (
     <Container>
       <Content>
-        <Logo>
-          <Highlight>Hooks</Highlight>
-          .guide
-        </Logo>
+        <LogoComp />
         <SubTitle>
           A catalog of <Highlight>react hooks with live preview.</Highlight>
         </SubTitle>
+        <Instruction>🍍 A collection of small React hooks</Instruction>
+        <Instruction>
+          💡 All examples are interactive. Experiment as you wish
+        </Instruction>
+
         <Instructions>
-          It's pretty easy to add a hook to this website. All you need to do is
-          write a markdown file.
+          Add your hook to the list in two steps,
           <Instruction>
             📝 Document your hook in{" "}
             <a href="https://github.com/Raathigesh/hooks.guide/tree/master/public/docs">

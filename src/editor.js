@@ -7,6 +7,7 @@ import "brace/mode/jsx";
 import "brace/mode/html";
 import "brace/theme/cobalt";
 import { format } from "./utils/format-code";
+import TabFrame from "./tab-frame";
 
 const Container = styled.div`
   position: relative;
@@ -36,39 +37,45 @@ const Menu = styled.div`
   }
 `;
 
-export default function HookEditor({ code, onChange }) {
+export default function HookEditor({ title, code, onChange }) {
   const height = code.split("\n").length * 19;
   return (
-    <Container>
-      <Menus>
-        <Menu
-          onClick={() => {
-            onChange(format(code));
+    <TabFrame title={title}>
+      <Container>
+        <Menus>
+          <Menu
+            onClick={() => {
+              onChange(format(code));
+            }}
+          >
+            Pretty
+          </Menu>
+          <Menu
+            onClick={() => {
+              copy(format(code));
+            }}
+          >
+            Copy
+          </Menu>
+        </Menus>
+        <AceEditor
+          mode="javascript"
+          value={code}
+          theme="cobalt"
+          onChange={onChange}
+          fontSize={15}
+          showGutter={false}
+          name="UNIQUE_ID_OF_DIV"
+          height={`${height}px`}
+          width="100%"
+          editorProps={{ $blockScrolling: true }}
+          style={{
+            borderRadius: "0 5px 5px 5px",
+            maxWidth: "900px",
+            padding: "5px"
           }}
-        >
-          Pretty
-        </Menu>
-        <Menu
-          onClick={() => {
-            copy(format(code));
-          }}
-        >
-          Copy
-        </Menu>
-      </Menus>
-      <AceEditor
-        mode="javascript"
-        value={code}
-        theme="cobalt"
-        onChange={onChange}
-        fontSize={15}
-        showGutter={false}
-        name="UNIQUE_ID_OF_DIV"
-        height={`${height}px`}
-        width="100%"
-        editorProps={{ $blockScrolling: true }}
-        style={{ borderRadius: "5px", maxWidth: "900px", padding: "5px" }}
-      />
-    </Container>
+        />
+      </Container>
+    </TabFrame>
   );
 }

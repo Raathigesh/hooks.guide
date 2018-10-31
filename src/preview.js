@@ -11,16 +11,25 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import throttle from "lodash.throttle";
 import { createCache, createResource } from "react-cache";
-
 import { execute } from "./utils/executor";
 import { fetchDoc } from "./utils/fetcher";
 import { parse } from "./utils/md-parser";
 import Editor from "./editor";
 import Contributors from "./contributors";
+import TabFrame from "./tab-frame";
 
 window.React = React;
 const cache = createCache();
 const docsResource = createResource(fetchDoc);
+
+const Container = styled.div`
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding-left: 70px;
+  @media (max-width: 700px) {
+    padding-left: 10px;
+  }
+`;
 
 const Name = styled.div`
   font-size: 30px;
@@ -35,7 +44,6 @@ const Reference = styled.a`
 
 const SubTitle = styled.div`
   font-size: 20px;
-  margin-top: 25px;
   margin-bottom: 10px;
 `;
 
@@ -52,15 +60,46 @@ const Footer = styled.div`
 `;
 
 const Console = styled.div`
-  margin-top: 10px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  div {
-    display: flex;
-    padding: 5px;
-    background-color: #e6e6e6;
-    color: #002240;
+  background-color: #002240;
+  padding: 7px;
+  border-radius: 0 5px 5px 5px;
+  color: white;
+  max-width: 900px;
+`;
+
+const ConsoleItem = styled.div`
+  color: wheat;
+`;
+
+const Menus = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  right: 15px;
+  top: 5px;
+  z-index: 99;
+  font-size: 13px;
+`;
+const Menu = styled.div`
+  display: inline-block;
+  color: wheat;
+  right: 0;
+  padding: 2px;
+  border-radius: 3px;
+  margin-left: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: gray;
   }
+`;
+
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const RepoUrl =
@@ -69,46 +108,77 @@ const RepoUrl =
 export default function Preview(props) {
   const doc = docsResource.read(cache, props.item.path);
   const { name, reference, hook = null, usage, contributors } = parse(doc);
-  console.log(name);
 
   const [nameValue] = useState(name);
   const [hookValue, setHook] = useState(hook);
   const [usageValue, setUsage] = useState(usage);
+  const [consoleLogs, setLogs] = useState([]);
 
-  useEffect(() => {
-    const codeToExecute = `${hookValue ? hookValue : ""}${usageValue}`;
+  useEffect(
+    () => {
+      const codeToExecute = `${hookValue ? hookValue : ""}${usageValue}`;
 
-    execute(codeToExecute, {
-      useState,
-      ReactDOM,
-      useCallback,
-      useEffect,
-      useReducer,
-      useRef,
-      useLayoutEffect,
-      throttle
-    });
-  });
+      execute(
+        codeToExecute,
+        {
+          useState,
+          ReactDOM,
+          useCallback,
+          useEffect,
+          useReducer,
+          useRef,
+          useLayoutEffect,
+          throttle
+        },
+        log => {
+          setLogs([...consoleLogs, log]);
+        }
+      );
+    },
+    [hookValue, usageValue]
+  );
 
   return (
-    <Flex column pr={4} pl={4} pt={0} auto>
-      <Name>{nameValue}</Name>
-      <Reference href={reference} target="_blank">
-        {reference}
-      </Reference>
-
+    <Container>
+      <Header>
+        <Name>{nameValue}</Name>
+        <Reference href={reference} target="_blank">
+          {reference}
+        </Reference>
+      </Header>
       {hookValue && (
         <React.Fragment>
-          <SubTitle>Hook implementation</SubTitle>
-          <Editor code={hookValue} onChange={setHook} />
+          <Editor
+            code={hookValue}
+            onChange={setHook}
+            title="💡 Implementation"
+          />
         </React.Fragment>
       )}
-      <SubTitle>Usage</SubTitle>
-      <Editor code={usageValue} onChange={setUsage} />
-      <SubTitle>Live preview</SubTitle>
+      <Editor code={usageValue} onChange={setUsage} title="🚀 Usage" />
 
-      <div id="preview-root" />
-      <Console id="preview-console" />
+      <TabFrame title="⚡Preview">
+        <div id="preview-root" />
+      </TabFrame>
+
+      {consoleLogs.length > 0 && (
+        <TabFrame title="🚨 console">
+          <Console>
+            <Menus>
+              <Menu
+                onClick={() => {
+                  setLogs([]);
+                }}
+              >
+                Clear
+              </Menu>
+            </Menus>
+            {consoleLogs.map(entry => (
+              <ConsoleItem>{entry}</ConsoleItem>
+            ))}
+          </Console>
+        </TabFrame>
+      )}
 
       <Contributors contributors={contributors} />
       <Footer>
@@ -116,6 +186,6 @@ export default function Preview(props) {
           💄 Improve this hook
         </ImproveThisDoc>
       </Footer>
-    </Flex>
+    </Container>
   );
 }
