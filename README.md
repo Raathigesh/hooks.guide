@@ -32,7 +32,7 @@ But navigation sidebar needs to know all the markdown files avilable so it can d
 
 - Run `yarn install`
 - Run `yarn start` to start the app in dev mode
-- If you add a new markdown file, you have to go to `src/docs.js` file and just make a dummy change to traigger a webpack build. This runs the babel macro again.
+- If you add a new markdown file, you have to go to `src/docs.js` file and just make a dummy change to trigger a webpack build. This runs the babel macro again.
 
 ## Contributors
 
