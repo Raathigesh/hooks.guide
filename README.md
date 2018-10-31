@@ -1,5 +1,7 @@
 # Hooks.guide
 
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+
 Collection of small hooks curated as a single collection.
 
 - 🍍 A collection of small React hooks
@@ -30,4 +32,17 @@ But navigation sidebar needs to know all the markdown files avilable so it can d
 
 - Run `yarn install`
 - Run `yarn start` to start the app in dev mode
-- If you add a new markdown file, you have to go to `src/docs.js` file and just make a dummy change to traigger a webpack build. This runs the babel macro again.
+- If you add a new markdown file, you have to go to `src/docs.js` file and just make a dummy change to trigger a webpack build. This runs the babel macro again.
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars0.githubusercontent.com/u/3108160?v=4" width="100px;"/><br /><sub><b>Raathigeshan Kugarajan</b></sub>](https://twitter.com/Raathigesh)<br />[💻](https://github.com/Raathigesh/hooks.guide/commits?author=Raathigesh "Code") [🎨](#design-Raathigesh "Design") [💡](#example-Raathigesh "Examples") [📖](https://github.com/Raathigesh/hooks.guide/commits?author=Raathigesh "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/4931048?v=4" width="100px;"/><br /><sub><b>Vivek Nayyar</b></sub>](https://www.viveknayyar.in/)<br />[💻](https://github.com/Raathigesh/hooks.guide/commits?author=vivek12345 "Code") [💡](#example-vivek12345 "Examples") [📖](https://github.com/Raathigesh/hooks.guide/commits?author=vivek12345 "Documentation") |
+| :---: | :---: |
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
