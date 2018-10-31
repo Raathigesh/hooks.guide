@@ -47,6 +47,7 @@ const ImproveThisDoc = styled.a`
 
 const Footer = styled.div`
   display: flex;
+  max-width: 900px;
   justify-content: flex-end;
 `;
 

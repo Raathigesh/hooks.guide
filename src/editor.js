@@ -1,6 +1,7 @@
 import React from "react";
 import AceEditor from "react-ace";
 import styled from "styled-components";
+import copy from "clipboard-copy";
 import "brace";
 import "brace/mode/jsx";
 import "brace/mode/html";
@@ -9,13 +10,14 @@ import { format } from "./utils/format-code";
 
 const Container = styled.div`
   position: relative;
+  max-width: 900px;
 `;
 
 const Menus = styled.div`
   position: absolute;
   display: flex;
   justify-content: flex-end;
-  right: 25px;
+  right: 15px;
   top: 5px;
   z-index: 99;
   font-size: 13px;
@@ -26,6 +28,7 @@ const Menu = styled.div`
   right: 0;
   padding: 2px;
   border-radius: 3px;
+  margin-left: 10px;
   cursor: pointer;
 
   &:hover {
@@ -45,6 +48,13 @@ export default function HookEditor({ code, onChange }) {
         >
           Pretty
         </Menu>
+        <Menu
+          onClick={() => {
+            copy(format(code));
+          }}
+        >
+          Copy
+        </Menu>
       </Menus>
       <AceEditor
         mode="javascript"
@@ -57,7 +67,7 @@ export default function HookEditor({ code, onChange }) {
         height={`${height}px`}
         width="100%"
         editorProps={{ $blockScrolling: true }}
-        style={{ borderRadius: "5px" }}
+        style={{ borderRadius: "5px", maxWidth: "900px", padding: "5px" }}
       />
     </Container>
   );

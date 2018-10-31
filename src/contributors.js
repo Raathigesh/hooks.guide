@@ -36,6 +36,7 @@ const Name = styled.a`
 `;
 
 export default function Contributors({ contributors }) {
+  if (!contributors.lenth) return null;
   return (
     <Container>
       <Title>Contributors</Title>

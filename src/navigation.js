@@ -42,7 +42,7 @@ const SectionHeader = styled.div`
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 30px 0 15px;
+  margin: 30px 0 10px;
 `;
 
 const Item = styled.div`
@@ -68,20 +68,34 @@ export default function() {
           .guide
         </Link>
       </Logo>
-      {Object.entries(hooks).map(([key, value]) => {
-        return (
-          <div>
-            <SectionHeader>{key}</SectionHeader>
-            {value.map(item => {
-              return (
-                <Item>
-                  <Link to={`/${key}/${item.name}`}>{item.name}</Link>
-                </Item>
-              );
-            })}
-          </div>
-        );
-      })}
+      {Object.entries(hooks)
+        .filter(([key]) => key !== "community")
+        .map(([key, value]) => {
+          return (
+            <div>
+              <SectionHeader>{key}</SectionHeader>
+              {value.map(item => {
+                return (
+                  <Item>
+                    <Link to={`/${key}/${item.name}`}>{item.name}</Link>
+                  </Item>
+                );
+              })}
+            </div>
+          );
+        })}
+      {
+        <div>
+          <SectionHeader>Community</SectionHeader>
+          {hooks.community.map(item => {
+            return (
+              <Item>
+                <Link to={`/community/${item.name}`}>{item.name}</Link>
+              </Item>
+            );
+          })}
+        </div>
+      }
     </Container>
   );
 }

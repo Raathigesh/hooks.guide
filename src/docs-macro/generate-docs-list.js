@@ -19,6 +19,7 @@ function getDocs() {
       path: folderName + "/" + fileName
     });
   });
+
   return docs;
 }
 

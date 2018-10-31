@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
+  max-width: 900px;
 `;
 
 const Content = styled.div`
@@ -60,15 +60,16 @@ export default function Landing() {
           A catalog of <Highlight>react hooks with live preview.</Highlight>
         </SubTitle>
         <Instructions>
-          To showcase a hook
+          It's pretty easy to add a hook to this website. All you need to do is
+          write a markdown file.
           <Instruction>
             📝 Document your hook in{" "}
             <a href="https://github.com/Raathigesh/hooks.guide/tree/master/public/docs">
               docs folder
-            </a>{" "}
-            using{" "}
+            </a>
+            . Refer{" "}
             <a href="https://github.com/Raathigesh/hooks.guide/blob/master/public/docs/template.md">
-              template.md
+              template.md.
             </a>
           </Instruction>
           <Instruction>✅ Send a PR</Instruction>

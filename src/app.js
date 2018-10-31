@@ -16,9 +16,10 @@ body {
 
 #preview-root {
   background-color: #002240;
-    padding: 7px;
-    border-radius: 5px;
-    color: white;
+  padding: 7px;
+  border-radius: 5px;
+  color: white;
+  max-width: 900px;
 }
 `;
 
@@ -42,7 +43,7 @@ class App extends Component {
           <GlobalStyle />
           <Navigation />
           <Route path="/" exact render={() => <Landing />} />
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<Loading />} maxDuration={1000}>
             {Object.entries(hooks).map(([key, value]) => {
               return value.map(item => {
                 return (

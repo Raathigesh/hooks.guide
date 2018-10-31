@@ -1,22 +1,28 @@
 # name
 
-useMyHook
+Name of your hook goes here
 
 # reference
 
-https://a-link-to-the-hook
+https://a-link-that-shows-more-info-about-the-hook
 
 # hook
 
 ```
-// Your hook implementation goes here
-// Don't use `export` or `import`. We just `eval` this piece
+// Your hook implementation goes here.
+// Don't use `export` or `import`. We just `eval` this code.
 ```
 
 # usage
 
 ```
-// Your code code here.
+// Your usage code code here. You can use the code you documented above.
 // Always name the component that you want to mount as `Demo`. Refer other docs for sample.
-// Don't use `export` or `import`. We just `eval` this piece
+// Don't use `export` or `import`. We just `eval` this code.
 ```
+
+# contributors
+
+Your Name
+https://a/link/to/your/avatar
+https://a/link/to/your/profile
