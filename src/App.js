@@ -3,7 +3,7 @@ import React, { Component, Suspense } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navigation from "./navigation";
 import Preview from "./preview";
-import hooks from "./docs.js";
+import hooks from "./docs";
 import Landing from "./landing";
 import Loading from "./loading";
 import styled, { createGlobalStyle } from "styled-components";
