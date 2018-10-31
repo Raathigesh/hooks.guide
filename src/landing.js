@@ -14,10 +14,6 @@ const Content = styled.div`
   padding-right: 64px;
 `;
 
-const Heading = styled.div`
-  font-size: 35px;
-`;
-
 const SubTitle = styled.div`
   font-size: 20px;
 `;

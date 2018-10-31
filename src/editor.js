@@ -5,7 +5,7 @@ import "brace";
 import "brace/mode/jsx";
 import "brace/mode/html";
 import "brace/theme/cobalt";
-import { format } from "./format-code";
+import { format } from "./utils/format-code";
 
 const Container = styled.div`
   position: relative;

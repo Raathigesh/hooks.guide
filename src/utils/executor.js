@@ -8,13 +8,11 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, info) {
-    // Display fallback UI
     this.setState({ hasError: true });
   }
 
   render() {
     if (this.state.hasError) {
-      // You can render any custom fallback UI
       return <span>Something went wrong.</span>;
     }
     return this.props.children;
@@ -23,7 +21,7 @@ class ErrorBoundary extends React.Component {
 `;
 
 export function execute(code, scope) {
-  const appened = `
+  const fullCodeString = `
   ${ErrorHandler}
   ${code}
 
@@ -45,10 +43,10 @@ export function execute(code, scope) {
       // consoleDiv.appendChild(newLog);
     };
     try {
-      const tranformedCode = Babel.transform(appened, {
+      const transformedCode = Babel.transform(fullCodeString, {
         presets: ["es2015", "react"]
       }).code;
-      eval(tranformedCode);
+      eval(transformedCode);
     } catch (e) {
       console.log(e);
     }

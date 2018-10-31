@@ -1,4 +1,4 @@
-import macro from "./macro";
+import macro from "./docs-macro/macro";
 
 const docsString = macro();
 const docsObj = JSON.parse(docsString);

@@ -1,5 +1,4 @@
 import React, { Component, Suspense } from "react";
-
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navigation from "./navigation";
 import Preview from "./preview";

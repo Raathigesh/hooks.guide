@@ -1,10 +1,9 @@
-var dir = require("node-dir");
-const { join, sep, basename } = require("path");
-const docsDirectory = join(__dirname, "../public/docs");
+const dir = require("node-dir");
+const { join, sep } = require("path");
+const docsDirectory = join(__dirname, "../../public/docs");
 
 function getDocs() {
   const docs = {};
-
   var filePaths = dir.files(docsDirectory, { sync: true });
   filePaths
     .filter(path => !path.includes("docs/template.md"))
@@ -22,7 +21,6 @@ function getDocs() {
         path: folderName + "/" + fileName
       });
     });
-
   return docs;
 }
 

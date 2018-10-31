@@ -4,8 +4,7 @@ import React, {
   useCallback,
   useReducer,
   useRef,
-  useLayoutEffect,
-  Suspense
+  useLayoutEffect
 } from "react";
 import { Flex } from "reflexbox";
 import ReactDOM from "react-dom";
@@ -13,11 +12,10 @@ import styled from "styled-components";
 import throttle from "lodash.throttle";
 import { createCache, createResource } from "react-cache";
 
-import { execute } from "./executor";
-import { fetchDoc } from "./fetcher";
-import { parse } from "./md-parser";
+import { execute } from "./utils/executor";
+import { fetchDoc } from "./utils/fetcher";
+import { parse } from "./utils/md-parser";
 import Editor from "./editor";
-import ErrorBoundry from "./error-boundry";
 
 window.React = React;
 const cache = createCache();
