@@ -1,0 +1,25 @@
+{
+  "projectName": "hooks.guide",
+  "projectOwner": "Raathigesh",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "Raathigesh",
+      "name": "Raathigeshan Kugarajan",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3108160?v=4",
+      "profile": "https://twitter.com/Raathigesh",
+      "contributions": [
+        "code",
+        "design",
+        "example",
+        "doc"
+      ]
+    }
+  ]
+}
