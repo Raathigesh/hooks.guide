@@ -1,5 +1,6 @@
 import React, { Component, Suspense } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import ReactGA from "react-ga";
 import Navigation from "./navigation";
 import Preview from "./preview";
 import hooks from "./docs";

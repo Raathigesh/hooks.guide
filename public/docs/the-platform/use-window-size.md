@@ -2,7 +2,7 @@
 
 useWindowSize
 
-# references
+# reference
 
 https://github.com/palmerhq/the-platform/
 

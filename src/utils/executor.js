@@ -27,6 +27,11 @@ export function execute(code, scope) {
 
   ReactDOM.render(<ErrorBoundary><Demo /></ErrorBoundary>, document.getElementById('preview-root'))
   `;
+
+  const consoleDiv = document.getElementById("preview-console");
+  if (consoleDiv) {
+    consoleDiv.innerHTML = "";
+  }
   setTimeout(() => {
     const ReactDOM = scope.ReactDOM;
     const useState = scope.useState;
@@ -37,10 +42,12 @@ export function execute(code, scope) {
     const useLayoutEffect = scope.useLayoutEffect;
     const throttle = scope.throttle;
     console.log = (...args) => {
-      const consoleDiv = document.getElementById("preview-console");
       const newLog = document.createElement("div");
       newLog.innerHTML = JSON.stringify(args);
-      // consoleDiv.appendChild(newLog);
+
+      if (consoleDiv) {
+        consoleDiv.appendChild(newLog);
+      }
     };
     try {
       const transformedCode = Babel.transform(fullCodeString, {

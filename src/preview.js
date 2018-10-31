@@ -16,6 +16,7 @@ import { execute } from "./utils/executor";
 import { fetchDoc } from "./utils/fetcher";
 import { parse } from "./utils/md-parser";
 import Editor from "./editor";
+import Contributors from "./contributors";
 
 window.React = React;
 const cache = createCache();
@@ -38,6 +39,17 @@ const SubTitle = styled.div`
   margin-bottom: 10px;
 `;
 
+const ImproveThisDoc = styled.a`
+  text-decoration: none;
+  color: #03a9f4;
+  font-size: 14px;
+`;
+
+const Footer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
 const Console = styled.div`
   margin-top: 10px;
   display: flex;
@@ -50,9 +62,12 @@ const Console = styled.div`
   }
 `;
 
+const RepoUrl =
+  "https://github.com/Raathigesh/hooks.guide/tree/master/public/docs/";
+
 export default function Preview(props) {
   const doc = docsResource.read(cache, props.item.path);
-  const { name, reference, hook = null, usage } = parse(doc);
+  const { name, reference, hook = null, usage, contributors } = parse(doc);
   console.log(name);
 
   const [nameValue] = useState(name);
@@ -77,7 +92,10 @@ export default function Preview(props) {
   return (
     <Flex column pr={4} pl={4} pt={0} auto>
       <Name>{nameValue}</Name>
-      <Reference href={reference}>{reference}</Reference>
+      <Reference href={reference} target="_blank">
+        {reference}
+      </Reference>
+
       {hookValue && (
         <React.Fragment>
           <SubTitle>Hook implementation</SubTitle>
@@ -90,6 +108,13 @@ export default function Preview(props) {
 
       <div id="preview-root" />
       <Console id="preview-console" />
+
+      <Contributors contributors={contributors} />
+      <Footer>
+        <ImproveThisDoc href={`${RepoUrl}${props.item.path}`} target="_blank">
+          💄 Improve this hook
+        </ImproveThisDoc>
+      </Footer>
     </Flex>
   );
 }

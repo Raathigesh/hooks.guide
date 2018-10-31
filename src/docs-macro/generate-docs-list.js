@@ -5,22 +5,20 @@ const docsDirectory = join(__dirname, "../../public/docs");
 function getDocs() {
   const docs = {};
   var filePaths = dir.files(docsDirectory, { sync: true });
-  filePaths
-    .filter(path => !path.includes("docs/template.md"))
-    .forEach(filePath => {
-      const pathTokens = filePath.split(sep);
-      const fileName = pathTokens.pop();
-      const folderName = pathTokens.pop();
+  filePaths.filter(path => !path.includes("template.md")).forEach(filePath => {
+    const pathTokens = filePath.split(sep);
+    const fileName = pathTokens.pop();
+    const folderName = pathTokens.pop();
 
-      if (!docs[folderName]) {
-        docs[folderName] = [];
-      }
+    if (!docs[folderName]) {
+      docs[folderName] = [];
+    }
 
-      docs[folderName].push({
-        name: camelize(fileName.replace(".md", "").replace(/-/g, " ")),
-        path: folderName + "/" + fileName
-      });
+    docs[folderName].push({
+      name: camelize(fileName.replace(".md", "").replace(/-/g, " ")),
+      path: folderName + "/" + fileName
     });
+  });
   return docs;
 }
 
