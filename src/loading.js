@@ -1,5 +1,6 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
+import { highlightColor } from "./theme";
 
 const SpinnerStyle = createGlobalStyle`
 .lds-ellipsis {
@@ -17,7 +18,7 @@ const SpinnerStyle = createGlobalStyle`
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: wheat;
+  background: ${highlightColor};
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {

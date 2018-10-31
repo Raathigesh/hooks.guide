@@ -5,6 +5,10 @@ const Container = styled.div`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  max-width: 900px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-top: 1px solid #ebebeb;
 `;
 
 const Contributor = styled.div`
@@ -16,19 +20,20 @@ const Contributor = styled.div`
 
 const ContributorsContainer = styled.div`
   display: flex;
-  width: 60px;
   flex-direction: row;
+  align-items: center;
 `;
 
 const Title = styled.div`
-  font-size: 15px;
-  margin-bottom: 10px;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #002240;
 `;
 
 const Avatar = styled.img`
   border-radius: 5px;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
 `;
 const Name = styled.a`
   font-size: 10px;
@@ -45,8 +50,12 @@ export default function Contributors({ contributors }) {
         {contributors.map(contributor => {
           return (
             <Contributor>
-              <Avatar src={contributor.avatar} />
-              <Name href={contributor.url}>{contributor.name}</Name>
+              <a href={contributor.url} target="_blank">
+                <Avatar src={contributor.avatar} />
+              </a>
+              <Name href={contributor.url} target="_blank">
+                {contributor.name}
+              </Name>
             </Contributor>
           );
         })}

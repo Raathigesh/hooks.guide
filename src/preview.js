@@ -58,6 +58,7 @@ const Footer = styled.div`
   display: flex;
   max-width: 900px;
   justify-content: flex-end;
+  margin-bottom: 30px;
 `;
 
 const Console = styled.div`
@@ -180,13 +181,12 @@ export default function Preview(props) {
           </Console>
         </TabFrame>
       )}
-
-      <Contributors contributors={contributors} />
       <Footer>
         <ImproveThisDoc href={`${RepoUrl}${props.item.path}`} target="_blank">
           💄 Improve this hook
         </ImproveThisDoc>
       </Footer>
+      <Contributors contributors={contributors} />
     </Container>
   );
 }
