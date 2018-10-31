@@ -16,7 +16,7 @@ const Tab = styled.div`
   padding: 5px;
   padding-bottom: 8px;
   box-shadow: 0px 0px 5px rgba(195, 22, 22, 0.03),
-    10px 13px 47px rgb(142, 142, 142);
+    10px 13px 47px rgb(171, 122, 121);
 `;
 
 export default function TabFrame({ title, children }) {

@@ -25,7 +25,7 @@ export default function Logo({ size = 45 }) {
       <Letter color="#001c35" size={size}>
         s
       </Letter>
-      <Letter color="#FF9041" size={size}>
+      <Letter color="#FF1F1F" size={size}>
         .guide
       </Letter>
     </div>

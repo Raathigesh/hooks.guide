@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import LogoComp from "./logo";
+import { highlightColor } from "./theme";
 
 const Container = styled.div`
   display: flex;
@@ -14,11 +15,13 @@ const Content = styled.div`
   padding-left: 64px;
   @media (max-width: 700px) {
     padding-left: 10px;
+    padding-right: 10px;
   }
 `;
 
 const SubTitle = styled.div`
   font-size: 20px;
+  margin-bottom: 10px;
 `;
 
 const Warning = styled.div`
@@ -29,7 +32,7 @@ const Warning = styled.div`
 `;
 
 const Highlight = styled.span`
-  color: #2196f3;
+  color: ${highlightColor};
 `;
 
 const Instructions = styled.div`
@@ -56,12 +59,10 @@ export default function Landing() {
       <Content>
         <LogoComp />
         <SubTitle>
-          A catalog of <Highlight>react hooks with live preview.</Highlight>
+          Collection of <Highlight>React hooks</Highlight> curated by the
+          community
         </SubTitle>
-        <Instruction>🍍 A collection of small React hooks</Instruction>
-        <Instruction>
-          💡 All examples are interactive. Experiment as you wish
-        </Instruction>
+        <Instruction>💡 All examples are interactive.</Instruction>
 
         <Instructions>
           Add your hook to the list in two steps,

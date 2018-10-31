@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import hooks from "./docs.js";
 import LogoComp from "./logo";
+import { highlightColor } from "./theme";
 
 import "typeface-nunito";
 
@@ -10,7 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 64px;
-  border-right: 1px solid wheat;
+  border-right: 1px solid #edeeee;
   padding-right: 13px;
   @media (max-width: 700px) {
     order: 2;
@@ -32,7 +33,7 @@ const Logo = styled.div`
 `;
 
 const Highlight = styled.span`
-  color: #2196f3;
+  color: ${highlightColor};
 `;
 
 const SectionHeader = styled.div`
@@ -59,7 +60,7 @@ const Item = styled.div`
     text-decoration: none;
     &:hover {
       font-weight: 700;
-      color: #03a9f4;
+      color: ${highlightColor};
     }
   }
 `;

@@ -17,6 +17,7 @@ import { parse } from "./utils/md-parser";
 import Editor from "./editor";
 import Contributors from "./contributors";
 import TabFrame from "./tab-frame";
+import { highlightColor } from "./theme";
 
 window.React = React;
 const cache = createCache();
@@ -39,7 +40,7 @@ const Name = styled.div`
 const Reference = styled.a`
   font-size: 15px;
   text-decoration: none;
-  color: #03a9f4;
+  color: ${highlightColor};
 `;
 
 const SubTitle = styled.div`
@@ -49,7 +50,7 @@ const SubTitle = styled.div`
 
 const ImproveThisDoc = styled.a`
   text-decoration: none;
-  color: #03a9f4;
+  color: ${highlightColor};
   font-size: 14px;
 `;
 
