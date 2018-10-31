@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import hooks from "./docs.json";
+import hooks from "./docs.js";
 
 import "typeface-nunito";
 
