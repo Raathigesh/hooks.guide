@@ -53,7 +53,7 @@ const useInput = initial => {
 ```
 function Demo() {
     const newTodo = useInput("");
-    return <input type="text" {...newTodo.bindToInput} />;
+    return <input type="text" value={newTodo.value} onChange={newTodo.onChange} />;
 }
 ```
 
