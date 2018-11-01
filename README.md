@@ -12,22 +12,28 @@
 - 🎈 Copy snippets to clipboard with a click
 - 💄 Prettify the snippets
 
+<br/>
+
 ### 🍒 How do I add a new Hook?
 
 The hooks are documented using markdown in `public/docs` directory.
 
 To add a new hook,
 
-- Add a new markdown file under a folder..
+- Add a new markdown file under a folder.
   - Document the hook under `community` folder if the hook doesn't belong to a published npm module.
     > Refer `public/docs/template.md` for documentation guide
 - Make a pull request
+
+<br/>
 
 ### 🧡 Contribute
 
 - Run `yarn install`
 - Run `yarn start` to start the app in dev mode
 - If you add a new markdown file, you have to go to `src/docs.js` file and just make a dummy change to trigger a webpack build. This runs the babel macro again.
+
+<br/>
 
 ### 👩‍🎨 Contributors
 
