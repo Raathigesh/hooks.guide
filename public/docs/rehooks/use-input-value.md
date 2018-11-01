@@ -1,10 +1,10 @@
 # name
 
-useWindowSize
+useInputValue
 
 # reference
 
-https://github.com/rehooks/window-size
+https://github.com/rehooks/input-value
 
 # hook
 
