@@ -116,6 +116,7 @@ const Logo = styled.div`
   display: none;
   @media (max-width: 700px) {
     display: block;
+    margin-bottom: 10px;
   }
 `;
 
