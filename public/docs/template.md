@@ -20,7 +20,7 @@ If you have a description to write, this is the place
 # usage
 
 ```
-// Your usage code code here. You can use the code you documented above.
+// Your usage code here. You can use the code you documented above.
 // Always name the component that you want to mount as `Demo`. Refer other docs for sample.
 // Don't use `export` or `import`. We just `eval` this code.
 ```
