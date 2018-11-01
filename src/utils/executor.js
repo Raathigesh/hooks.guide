@@ -37,6 +37,7 @@ export function execute(code, scope, log) {
     const useLayoutEffect = scope.useLayoutEffect;
     const throttle = scope.throttle;
     console.log = (...args) => {
+      console.warn(...args);
       if (args) {
         log(JSON.stringify(args));
       }
@@ -49,5 +50,5 @@ export function execute(code, scope, log) {
     } catch (e) {
       console.log(e);
     }
-  }, 0);
+  }, 1000);
 }

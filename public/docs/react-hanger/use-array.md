@@ -6,6 +6,15 @@ useArray
 
 https://github.com/kitze/react-hanger
 
+# description
+
+Methods:
+
+- add
+- clear
+- removeIndex
+- removeById
+
 # hook
 
 ```

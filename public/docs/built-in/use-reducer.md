@@ -6,6 +6,10 @@ useReducer
 
 https://reactjs.org/docs/hooks-reference.html#usereducer
 
+# description
+
+An alternative to useState. Accepts a reducer of type `(state, action) => newState`, and returns the current state paired with a dispatch method.
+
 # usage
 
 ```

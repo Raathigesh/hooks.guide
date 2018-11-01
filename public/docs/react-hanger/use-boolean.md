@@ -6,6 +6,14 @@ useBoolean
 
 https://github.com/kitze/react-hanger
 
+# description
+
+Methods:
+
+- toggle
+- setTrue
+- setFalse
+
 # hook
 
 ```

@@ -6,6 +6,10 @@ useDeviceMotion
 
 https://github.com/palmerhq/the-platform/
 
+# description
+
+Detect and retrieve current device Motion.
+
 # hook
 
 ```

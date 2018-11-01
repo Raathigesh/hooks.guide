@@ -6,6 +6,13 @@ useWindowSize
 
 https://github.com/palmerhq/the-platform/
 
+# description
+
+Returns object containing:
+
+- width: Width of browser viewport (window.innerWidth)
+- height: Height of browser viewport (window.innerHeight)
+
 # hook
 
 ```

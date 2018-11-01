@@ -109,7 +109,14 @@ const RepoUrl =
 
 export default function Preview(props) {
   const doc = docsResource.read(cache, props.item.path);
-  const { name, reference, hook = null, usage, contributors } = parse(doc);
+  const {
+    name,
+    reference,
+    hook = null,
+    usage,
+    contributors,
+    description
+  } = parse(doc);
 
   const [nameValue] = useState(name);
   const [hookValue, setHook] = useState(hook);
@@ -148,6 +155,7 @@ export default function Preview(props) {
           {reference}
         </Reference>
       </Header>
+      <div dangerouslySetInnerHTML={{ __html: description }} />
       {hookValue && (
         <React.Fragment>
           <Editor

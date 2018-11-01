@@ -6,6 +6,10 @@ useEffect
 
 https://reactjs.org/docs/hooks-effect.html
 
+# description
+
+The Effect Hook lets you perform side effects in function components
+
 # usage
 
 ```

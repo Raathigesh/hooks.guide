@@ -6,6 +6,13 @@ useWindowScrollPosition
 
 https://github.com/palmerhq/the-platform/
 
+# description
+
+Returns object containing:
+
+- x: number: Horizontal scroll in pixels (window.pageXOffset).
+- y: number: Vertical scroll in pixels (window.pageYOffset).
+
 # hook
 
 ```

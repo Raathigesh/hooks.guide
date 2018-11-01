@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import hooks from "./docs.js";
 import LogoComp from "./logo";
 import { highlightColor } from "./theme";
@@ -82,7 +82,12 @@ export default function() {
               {value.map(item => {
                 return (
                   <Item>
-                    <Link to={`/${key}/${item.name}`}>{item.name}</Link>
+                    <NavLink
+                      activeStyle={{ color: highlightColor }}
+                      to={`/${key}/${item.name}`}
+                    >
+                      {item.name}
+                    </NavLink>
                   </Item>
                 );
               })}

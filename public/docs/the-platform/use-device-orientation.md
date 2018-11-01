@@ -6,6 +6,10 @@ useDeviceOrientation
 
 https://github.com/palmerhq/the-platform/
 
+# description
+
+Detect and retrieve current device orientation.
+
 # hook
 
 ```

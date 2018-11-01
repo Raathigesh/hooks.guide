@@ -13,6 +13,28 @@ function findNode(nodes, text) {
   return nodes[index + 1].text;
 }
 
+function getDescription(nodes) {
+  const indexOfDescription = nodes.findIndex(
+    node => node.type === "heading" && node.text === "description"
+  );
+
+  if (indexOfDescription < 0) {
+    return null;
+  }
+
+  const descriptionTokens = [];
+  for (let i = indexOfDescription + 1; i < nodes.length; i++) {
+    const node = nodes[i];
+    if (node.type === "heading" && node.depth === 1) {
+      break;
+    }
+    descriptionTokens.push(node);
+  }
+  //links: {}
+  descriptionTokens.links = {};
+  return marked.parser(descriptionTokens);
+}
+
 function findContributors(nodes) {
   const index = nodes.findIndex(
     node => node.type === "heading" && node.text === "contributors"
@@ -38,11 +60,14 @@ function findContributors(nodes) {
 export function parse(code) {
   const nodes = marked.lexer(code).filter(item => item.type !== "space");
 
-  return {
+  const result = {
     name: findNode(nodes, "name"),
     reference: findNode(nodes, "reference"),
     hook: format(findNode(nodes, "hook")),
     usage: format(findNode(nodes, "usage")),
-    contributors: findContributors(nodes) || []
+    contributors: findContributors(nodes) || [],
+    description: getDescription(nodes)
   };
+
+  return result;
 }

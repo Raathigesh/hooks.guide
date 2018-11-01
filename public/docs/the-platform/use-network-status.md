@@ -6,6 +6,10 @@ useNetworkStatus
 
 https://github.com/palmerhq/the-platform/
 
+# description
+
+Retrieve network status from the browser.
+
 # hook
 
 ```
