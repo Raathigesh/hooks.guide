@@ -22,6 +22,10 @@ const Menus = styled.div`
   top: 5px;
   z-index: 99;
   font-size: 13px;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 const Menu = styled.div`
   display: inline-block;

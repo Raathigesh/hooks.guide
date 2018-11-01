@@ -6,6 +6,7 @@ import React, {
   useRef,
   useLayoutEffect
 } from "react";
+import { Link } from "react-router-dom";
 import { Flex } from "reflexbox";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
@@ -18,6 +19,7 @@ import Editor from "./editor";
 import Contributors from "./contributors";
 import TabFrame from "./tab-frame";
 import { highlightColor } from "./theme";
+import LogoComp from "./logo";
 
 window.React = React;
 const cache = createCache();
@@ -104,6 +106,18 @@ const Header = styled.div`
   flex-direction: column;
 `;
 
+const Logo = styled.div`
+  font-size: 25px;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  display: none;
+  @media (max-width: 700px) {
+    display: block;
+  }
+`;
+
 const RepoUrl =
   "https://github.com/Raathigesh/hooks.guide/tree/master/public/docs/";
 
@@ -122,6 +136,8 @@ export default function Preview(props) {
   const [hookValue, setHook] = useState(hook);
   const [usageValue, setUsage] = useState(usage);
   const [consoleLogs, setLogs] = useState([]);
+
+  useEffect(() => window.scrollTo(0, 0), [props.item]);
 
   useEffect(
     () => {
@@ -149,6 +165,11 @@ export default function Preview(props) {
 
   return (
     <Container>
+      <Logo>
+        <Link to="/">
+          <LogoComp size={25} />
+        </Link>
+      </Logo>
       <Header>
         <Name>{nameValue}</Name>
         <Reference href={reference} target="_blank">

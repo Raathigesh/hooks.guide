@@ -13,6 +13,7 @@ const Container = styled.div`
   padding-left: 64px;
   border-right: 1px solid #edeeee;
   padding-right: 13px;
+  padding-bottom: 50px;
   @media (max-width: 700px) {
     order: 2;
     padding-left: 10px;
