@@ -20,7 +20,7 @@ class ErrorBoundary extends React.Component {
 }
 `;
 
-export function execute(code, scope, log) {
+export function execute(code, scope) {
   const fullCodeString = `
   ${ErrorHandler}
   ${code}
@@ -28,6 +28,11 @@ export function execute(code, scope, log) {
   ReactDOM.render(<ErrorBoundary><Demo /></ErrorBoundary>, document.getElementById('preview-root'))
   `;
   setTimeout(() => {
+    const consoleContainer = document.getElementById("console-container");
+    if (consoleContainer) {
+      consoleContainer.innerHTML = "";
+    }
+
     const ReactDOM = scope.ReactDOM;
     const useState = scope.useState;
     const useCallback = scope.useCallback;
@@ -39,7 +44,12 @@ export function execute(code, scope, log) {
     console.log = (...args) => {
       console.warn(...args);
       if (args) {
-        log(JSON.stringify(args));
+        const consoleEntry = document.createElement("div");
+        consoleEntry.innerHTML = JSON.stringify(args);
+
+        if (consoleContainer) {
+          consoleContainer.appendChild(consoleEntry);
+        }
       }
     };
     try {
@@ -50,5 +60,5 @@ export function execute(code, scope, log) {
     } catch (e) {
       console.log(e);
     }
-  }, 1000);
+  }, 10);
 }

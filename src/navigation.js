@@ -12,7 +12,7 @@ const Container = styled.div`
   flex-direction: column;
   padding-left: 64px;
   border-right: 1px solid #edeeee;
-  padding-right: 13px;
+  padding-right: 20px;
   padding-bottom: 50px;
   @media (max-width: 700px) {
     order: 2;

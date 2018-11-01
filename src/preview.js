@@ -26,6 +26,7 @@ const cache = createCache();
 const docsResource = createResource(fetchDoc);
 
 const Container = styled.div`
+  max-width: 900px;
   flex-direction: column;
   flex: 1 1 auto;
   padding-left: 70px;
@@ -58,7 +59,7 @@ const ImproveThisDoc = styled.a`
 
 const Footer = styled.div`
   display: flex;
-  max-width: 900px;
+
   justify-content: flex-end;
   margin-bottom: 30px;
 `;
@@ -132,10 +133,9 @@ export default function Preview(props) {
     description
   } = parse(doc);
 
-  const [nameValue] = useState(name);
+  const [nameValue, setName] = useState(name);
   const [hookValue, setHook] = useState(hook);
   const [usageValue, setUsage] = useState(usage);
-  const [consoleLogs, setLogs] = useState([]);
 
   useEffect(() => window.scrollTo(0, 0), [props.item]);
 
@@ -143,22 +143,16 @@ export default function Preview(props) {
     () => {
       const codeToExecute = `${hookValue ? hookValue : ""}${usageValue}`;
 
-      execute(
-        codeToExecute,
-        {
-          useState,
-          ReactDOM,
-          useCallback,
-          useEffect,
-          useReducer,
-          useRef,
-          useLayoutEffect,
-          throttle
-        },
-        log => {
-          setLogs([...consoleLogs, log]);
-        }
-      );
+      execute(codeToExecute, {
+        useState,
+        ReactDOM,
+        useCallback,
+        useEffect,
+        useReducer,
+        useRef,
+        useLayoutEffect,
+        throttle
+      });
     },
     [hookValue, usageValue]
   );
@@ -192,24 +186,9 @@ export default function Preview(props) {
         <div id="preview-root" />
       </TabFrame>
 
-      {consoleLogs.length > 0 && (
-        <TabFrame title="🚨 console">
-          <Console>
-            <Menus>
-              <Menu
-                onClick={() => {
-                  setLogs([]);
-                }}
-              >
-                Clear
-              </Menu>
-            </Menus>
-            {consoleLogs.map(entry => (
-              <ConsoleItem>{entry}</ConsoleItem>
-            ))}
-          </Console>
-        </TabFrame>
-      )}
+      <TabFrame title="🚨 console">
+        <Console id="console-container" />
+      </TabFrame>
       <Footer>
         <ImproveThisDoc href={`${RepoUrl}${props.item.path}`} target="_blank">
           💄 Improve this hook
