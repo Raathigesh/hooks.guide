@@ -6,6 +6,10 @@ Name of your hook goes here
 
 https://a-link-that-shows-more-info-about-the-hook
 
+# description
+
+If you have a description to write, this is the place
+
 # hook
 
 ```

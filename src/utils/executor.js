@@ -1,4 +1,5 @@
-import * as Babel from "@babel/standalone";
+// import * as Babel from "@babel/standalone";
+const buble = require("buble");
 
 const ErrorHandler = `
 class ErrorBoundary extends React.Component {
@@ -9,6 +10,7 @@ class ErrorBoundary extends React.Component {
 
   componentDidCatch(error, info) {
     this.setState({ hasError: true });
+    console.error(error);
   }
 
   render() {
@@ -53,9 +55,10 @@ export function execute(code, scope) {
       }
     };
     try {
-      const transformedCode = Babel.transform(fullCodeString, {
+      /* const transformedCode = Babel.transform(fullCodeString, {
         presets: ["es2015", "react"]
-      }).code;
+      }).code; */
+      const transformedCode = buble.transform(fullCodeString).code;
       eval(transformedCode);
     } catch (e) {
       console.log(e);
