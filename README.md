@@ -14,7 +14,7 @@
 
 <br/>
 
-### 🍒 How do I add a new Hook?
+### 🏗 How do I add a new Hook?
 
 The hooks are documented using markdown in `public/docs` directory.
 
