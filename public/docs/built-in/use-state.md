@@ -13,7 +13,7 @@ Returns a stateful value, and a function to update it.
 # usage
 
 ```
-function Demo({initialCount}) {
+function Demo({initialCount = 0}) {
   const [count, setCount] = useState(initialCount);
   return (
     <>
