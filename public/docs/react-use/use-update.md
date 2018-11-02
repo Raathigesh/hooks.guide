@@ -4,7 +4,7 @@ useUpdate
 
 # reference
 
-https://github.com/streamich/react-use/blob/master/docs/useTimeout.md
+https://github.com/streamich/react-use/blob/master/docs/useUpdate.md
 
 # description
 
