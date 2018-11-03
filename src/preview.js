@@ -166,7 +166,7 @@ export default function Preview(props) {
         </Link>
       </Logo>
       <Header>
-        <Name>{nameValue}</Name>
+        <h1>{nameValue}</h1>
         <Reference href={reference} target="_blank">
           {reference}
         </Reference>
