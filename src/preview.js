@@ -165,7 +165,7 @@ export default function Preview(props) {
         <meta property="og:title" content={`hooke.guide - ${name}`} />
         <meta
           property="og:url"
-          content={`http://hooks.guide/${props.item.path}`}
+          content={`https://hooks.guide/${props.item.path}`}
         />
         <meta property="og:description" content={description} />
       </Helmet>
