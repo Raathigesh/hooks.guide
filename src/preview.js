@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { Flex } from "reflexbox";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 import throttle from "lodash.throttle";
 import { createCache, createResource } from "react-cache";
 import { execute } from "./utils/executor";
@@ -160,6 +161,14 @@ export default function Preview(props) {
 
   return (
     <Container>
+      <Helmet>
+        <meta property="og:title" content={`hooke.guide - ${name}`} />
+        <meta
+          property="og:url"
+          content={`http://hooks.guide/${props.item.path}`}
+        />
+        <meta property="og:description" content={description} />
+      </Helmet>
       <Logo>
         <Link to="/">
           <LogoComp size={25} />
