@@ -27,13 +27,6 @@ const useFavicon = (href) => {
 # usage
 
 ```
-// Returns a Promise that resolves after one second.
-const fn = () => new Promise((resolve) => {
-  setTimeout(() => {
-    resolve('RESOLVED');
-  }, 1000);
-});
-
 function Demo() {
   useFavicon('https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico');
 
