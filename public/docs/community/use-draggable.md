@@ -48,7 +48,14 @@ function Demo() {
   const el = useRef()
   useDraggable(el)
 
-  return (<div ref={el} className="DraggableBox"></div>)
+  const style = {
+    border: "3px solid cyan",
+    margin: "40px auto 0 auto",
+    width: "100px",
+    height: "100px",
+  }
+
+  return (<div ref={el} style={style}></div>)
 }
 ```
 
