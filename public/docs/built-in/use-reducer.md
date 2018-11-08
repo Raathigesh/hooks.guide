@@ -26,7 +26,7 @@ function reducer(state, action) {
   }
 }
 
-function Demo({initialState}) {
+function Demo() {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
