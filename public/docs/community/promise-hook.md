@@ -73,9 +73,6 @@ const usePromise = (
 # usage
 
 ```javascript
-import React from "react";
-import { usePromise } from "promise-hook";
-
 const Movies = () => {
   const { isFetching, data } = usePromise(fetchMovies, { resolve: true });
 
