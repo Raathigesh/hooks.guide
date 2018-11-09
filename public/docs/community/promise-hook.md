@@ -73,22 +73,30 @@ const usePromise = (
 # usage
 
 ```javascript
-const Movies = () => {
-  const { isFetching, data } = usePromise(fetchMovies, { resolve: true });
+const Demo = () => {
+  const { isLoading, data } = usePromise(fetchMovies, { resolve: true });
 
-  return isFetching ? (
+  return isLoading ? (
     <div>Loading...</div>
   ) : (
-    <div>
+    <ul>
       {data.map(movie => (
-        <div key={movie.id}>{movie.title}</div>
+        <li key={movie.id}>{movie.title}</li>
       ))}
-    </div>
+    </ul>
   );
 };
 
 const fetchMovies = () =>
-  fetch(`http://your-amazing-api.com/movies`).then(res => res.json());
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([
+        { id: 1, title: "The Godfather" },
+        { id: 2, title: "The Dark Knight" },
+        { id: 3, title: "Fight Club" }
+      ]);
+    }, 1000);
+  });
 ```
 
 # contributors
