@@ -40,6 +40,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "aiven715",
+      "name": "Ivan Mironchik",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44402489?v=4",
+      "profile": "https://github.com/aiven715",
+      "contributions": [
+        "example"
+      ]
     }
   ]
 }
