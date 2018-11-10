@@ -175,12 +175,19 @@ export default function Preview(props) {
         </Link>
       </Logo>
       <Header>
-        <h1>{nameValue}</h1>
-        <Reference href={reference} target="_blank">
+        <h1 className="docs-content-header">{nameValue}</h1>
+        <Reference
+          className="docs-content-reference-link"
+          href={reference}
+          target="_blank"
+        >
           {reference}
         </Reference>
       </Header>
-      <div dangerouslySetInnerHTML={{ __html: description }} />
+      <div
+        className="docs-content-description"
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
       {hookValue && (
         <React.Fragment>
           <Editor
