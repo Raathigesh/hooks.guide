@@ -78,11 +78,13 @@ export default function() {
         .filter(([key]) => key !== "community")
         .map(([key, value]) => {
           return (
-            <div>
-              <SectionHeader>{key}</SectionHeader>
+            <div className="docs-nav-section-group">
+              <SectionHeader className="docs-nav-section-header">
+                {key}
+              </SectionHeader>
               {value.map(item => {
                 return (
-                  <Item>
+                  <Item className="docs-nav-section-item">
                     <NavLink
                       activeStyle={{ color: highlightColor }}
                       to={`/${key}/${item.name}`}
@@ -96,11 +98,13 @@ export default function() {
           );
         })}
       {
-        <div>
-          <SectionHeader>Community</SectionHeader>
+        <div className="docs-nav-section-group">
+          <SectionHeader className="docs-nav-section-header">
+            Community
+          </SectionHeader>
           {hooks.community.map(item => {
             return (
-              <Item>
+              <Item className="docs-nav-section-item">
                 <Link to={`/community/${item.name}`}>{item.name}</Link>
               </Item>
             );
