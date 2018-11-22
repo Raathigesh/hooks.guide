@@ -52,17 +52,24 @@ const SectionHeader = styled.div`
   margin: 30px 0 10px;
 `;
 
-const Item = styled.div`
+const Item = styled(NavLink)`
   cursor: pointer;
+  display: block;
+  color: black;
+  text-decoration: none;
 
-  a {
-    color: black;
+  &:hover {
+    font-weight: 700;
+    color: ${highlightColor};
+  }
 
-    text-decoration: none;
-    &:hover {
-      font-weight: 700;
-      color: ${highlightColor};
-    }
+  &::after {
+    display: block;
+    content: "${props => props.children}";
+    font-weight: 700;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
   }
 `;
 
@@ -84,13 +91,12 @@ export default function() {
               </SectionHeader>
               {value.map(item => {
                 return (
-                  <Item className="docs-nav-section-item">
-                    <NavLink
-                      activeStyle={{ color: highlightColor }}
-                      to={`/${key}/${item.name}`}
-                    >
-                      {item.name}
-                    </NavLink>
+                  <Item
+                    className="docs-nav-section-item"
+                    activeStyle={{ color: highlightColor }}
+                    to={`/${key}/${item.name}`}
+                  >
+                    {item.name}
                   </Item>
                 );
               })}
@@ -104,8 +110,12 @@ export default function() {
           </SectionHeader>
           {hooks.community.map(item => {
             return (
-              <Item className="docs-nav-section-item">
-                <Link to={`/community/${item.name}`}>{item.name}</Link>
+              <Item
+                className="docs-nav-section-item"
+                activeStyle={{ color: highlightColor }}
+                to={`/community/${item.name}`}
+              >
+                {item.name}
               </Item>
             );
           })}
