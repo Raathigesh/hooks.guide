@@ -19,6 +19,7 @@ const useOnUnmount = onUnmount =>
 
 ```
 function Demo() {
+    // replace `<div></div>` below with `null` to see output in console
     useOnUnmount(() => console.log("goodbye world"));
     return <div></div>;
 }
