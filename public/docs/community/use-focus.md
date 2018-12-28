@@ -37,7 +37,7 @@ const useFocus = (ref, defaultState = false) => {
 
 # usage
 
-```
+```js
 // Your usage code here. You can use the code you documented above.
 // Always name the component that you want to mount as `Demo`. Refer other docs for sample.
 // Don't use `export` or `import`. We just `eval` this code.
@@ -48,9 +48,9 @@ function Demo() {
   const focused = useFocus(ref);
 
   return (
-    <div className="form-field">
+    <div className={`form-field${focused && ' is-focused'}`}>
       <input type="text" ref={ref} placeholder="focus on me" />
-      {focused && <span>Some input tip lorem ipsum dolor sit amet, consecteur elit sed do eiusmod tempor incididunt</span>
+      {focused && <span className="tip">This trivial example could easily be achieved with <code>input:focus + .tip</code> but managing styles on a parent element is where this hook shines.</span>}
     </div>
   );
 }
