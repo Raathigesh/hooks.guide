@@ -110,10 +110,8 @@ export default function Landing() {
           </a>
         </RepoLink>
         <Warning>
-          Hooks are a new feature proposal that lets you use state and other
-          React features without writing a class. They’re currently in React
-          v16.7.0-alpha and being discussed in{" "}
-          <a href="https://github.com/reactjs/rfcs/pull/68">an open RFC</a>.
+          <a href="https://reactjs.org/docs/hooks-intro.html">Hooks</a> are a
+          new, opt-in feature in React, introduced in the v16.8.0 release.
         </Warning>
       </Content>
     </Container>
