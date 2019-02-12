@@ -4,7 +4,7 @@ useDocumentTitle
 
 # reference
 
-https://github.com/rehooks/device-orientation
+https://github.com/rehooks/document-title
 
 # hook
 

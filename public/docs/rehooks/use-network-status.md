@@ -1,10 +1,10 @@
 # name
 
-useDeviceOrientation
+useNetworkStatus
 
 # reference
 
-https://github.com/rehooks/device-orientation
+https://github.com/rehooks/network-status
 
 # hook
 
