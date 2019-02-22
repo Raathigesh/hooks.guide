@@ -53,8 +53,8 @@ function Demo() {
   let imgUrl = `https://via.placeholder.com/${width}x${height}`
 
   return (
-    <div style={{ width: '100%', height: '100%' }}>
-      <img ref={ref} src={imgUrl} />
+    <div ref={ref} style={{ width: '100%', height: '100%' }}>
+      <img src={imgUrl} />
     </div>
   )
 }
