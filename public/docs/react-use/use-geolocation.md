@@ -41,10 +41,13 @@ const useGeolocation = () => {
       });
     }
   };
+  const onError = (error) => {
+    setState(error)
+  }
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(onEvent);
-    watchId = navigator.geolocation.watchPosition(onEvent);
+    navigator.geolocation.getCurrentPosition(onEvent, onError);
+    watchId = navigator.geolocation.watchPosition(onEvent, onError);
 
     return () => {
       mounted = false;
