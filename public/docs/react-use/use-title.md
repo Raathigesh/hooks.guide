@@ -1,6 +1,6 @@
 # name
 
-useFavicon
+useTitle
 
 # reference
 
